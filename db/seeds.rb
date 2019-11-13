@@ -10,6 +10,6 @@ Tweet.destroy_all
 User.destroy_all
 
 User.create([{username: "Joe", password: "1234", email: "j1@gmail.com"}])
-Tweet.create([{user: User.all.first, content: "Test"}])
+Tweet.create([{user: User.all.first, content: "This is Joe"}])
 
 puts "seeds done!"
