@@ -9,6 +9,10 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "fwitter_secret"
   end
 
+  get '/' do
+    erb :index
+  end
+
   helpers do
     def logged_in?
       !!session[:user_id]
@@ -18,10 +22,6 @@ class ApplicationController < Sinatra::Base
       User.find(session[:user_id])
     end
 
-  end
-
-  get '/' do
-    erb :index
   end
 
 end

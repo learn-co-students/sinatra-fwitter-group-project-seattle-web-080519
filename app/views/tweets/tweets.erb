@@ -1,7 +1,9 @@
-<h1>Welcome, <%= @user.username %></h1>
+<h1>Welcome, <%= @user ? @user.username : "" %>!</h1>
 
-<h3>Tweets: </h3>
+<h3>Your Tweets: </h3>
 
 <% @tweets.each do |tweet| %>
-  <%= tweet.content %>
+  <label><%= tweet.id %>.</label>
+  <a href="tweets/<%= tweet.id %>"> <%= tweet.content %></a><br/>
+  <hr/>
 <% end %>
