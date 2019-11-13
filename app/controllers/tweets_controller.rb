@@ -2,7 +2,8 @@ class TweetsController < ApplicationController
 
   get '/tweets' do
     if logged_in?
-      @tweets = Tweet.all
+      @tweets = Tweet.where(user_id: session[:user_id])
+      puts @tweets
       @user = User.find(session[:user_id])
       erb :'/tweets/tweets'
     else
